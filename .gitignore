@@ -1,0 +1,8 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+
+# Build output (if we ever zip for the store)
+*.zip
+dist/

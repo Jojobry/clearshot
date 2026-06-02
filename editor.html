@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClearShot — Edit screenshot</title>
+    <link rel="stylesheet" href="editor.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <div class="brand">
+        <span class="dot"></span> ClearShot
+      </div>
+
+      <div class="group tools" id="tools">
+        <button class="tbtn" data-tool="arrow" title="Arrow (A)">➔</button>
+        <button class="tbtn" data-tool="rect" title="Box (R)">▭</button>
+        <button class="tbtn" data-tool="blur" title="Blur (B)">🌫</button>
+        <button class="tbtn" data-tool="text" title="Text (T)">T</button>
+      </div>
+
+      <div class="group colors" id="colors">
+        <button class="swatch" data-color="#ef4444" style="background:#ef4444" title="Red"></button>
+        <button class="swatch" data-color="#f59e0b" style="background:#f59e0b" title="Amber"></button>
+        <button class="swatch" data-color="#22c55e" style="background:#22c55e" title="Green"></button>
+        <button class="swatch" data-color="#3b82f6" style="background:#3b82f6" title="Blue"></button>
+        <button class="swatch" data-color="#111827" style="background:#111827" title="Black"></button>
+        <button class="swatch" data-color="#ffffff" style="background:#ffffff;border-color:#9ca3af" title="White"></button>
+      </div>
+
+      <div class="group">
+        <label class="sizelbl">Size</label>
+        <input type="range" id="size" min="2" max="24" value="6" />
+      </div>
+
+      <div class="group">
+        <button class="tbtn" id="undo" title="Undo (Ctrl+Z)">Undo</button>
+        <button class="tbtn" id="clear" title="Remove all marks">Clear</button>
+      </div>
+
+      <div class="group right">
+        <button class="tbtn primary" id="copy">Copy</button>
+        <button class="tbtn primary" id="download">Download PNG</button>
+      </div>
+    </header>
+
+    <div class="status" id="status"></div>
+
+    <main class="stage" id="stage">
+      <canvas id="canvas"></canvas>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="editor.js"></script>
+  </body>
+</html>
