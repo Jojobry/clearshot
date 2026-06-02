@@ -161,14 +161,17 @@ function setupCanvasEvents() {
 
 function placeText(e) {
   const input = document.createElement("input");
+  input.type = "text";
   input.className = "text-input";
+  input.placeholder = "Type, then Enter";
   input.style.left = e.clientX + "px";
   input.style.top = e.clientY + "px";
   input.style.color = color;
   const fontPx = Math.max(14, size * 2.6);
   input.style.fontSize = fontPx + "px";
   document.body.appendChild(input);
-  input.focus();
+  // focus on the next frame so the placing click can't steal it back
+  requestAnimationFrame(() => input.focus());
 
   const anchor = toCanvasCoords(e);
 
